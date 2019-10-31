@@ -1,0 +1,17 @@
+<section id = "login">
+    <form>
+        <div *ngIf="invalidInput">
+                Invalid credentials.
+        </div>
+        <input
+            [(ngModel)]="useremail"  name = "inputemail"
+            type="email" placeholder="email address">
+        <input
+            [(ngModel)] = "userpassword" name = "inputpassword"
+            type="passwod" placeholder = "password">
+        <button
+            [disabled] = "!(useremail && userpassword)"
+            (click) = "submit()"
+        >Submit</button>
+    </form>
+</section>
