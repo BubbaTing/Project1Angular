@@ -15,14 +15,11 @@ import { TicketsComponent } from './tickets/tickets.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginComponent,
-    TicketOptionComponent
-
+    TicketOptionComponent,
     ManagerPageComponent,
     RequestComponent,
     TicketsComponent
-
   ],
   imports: [
     BrowserModule,
