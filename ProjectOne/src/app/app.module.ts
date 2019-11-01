@@ -8,21 +8,18 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 import { RequestsComponent } from './requests/requests.component';
 import { LoginComponent } from './login/login.component';
 import { TicketOptionComponent } from './ticket-option/ticket-option.component';
-import { ManagerPageComponent } from './manager-page/manager-page.component';
 import { RequestComponent } from './request/request.component';
 import { TicketsComponent } from './tickets/tickets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ManagerPageComponent,
-    RequestsComponent,
     LoginComponent,
     TicketOptionComponent,
     ManagerPageComponent,
     RequestComponent,
+    RequestsComponent,
     TicketsComponent
-
   ],
   imports: [
     BrowserModule,
