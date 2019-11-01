@@ -1,0 +1,25 @@
+<h1>View All Requests</h1>
+
+<ul class="request-headings">
+    <span> Name </span>
+    <span> Amount </span>
+    <span> Description </span>
+    <span> Timestamp </span>
+</ul>
+
+<ul class="requests">
+    <li *ngfor= "for request of requests">
+        <span> {{ request.name }} </span>
+        <span> {{ request.amount }} </span>
+        <span> {{ request.description }} </span>
+        <span> {{ request.timestamp }} </span>
+
+        <button (click) = "approve()"> Approve </button>
+        <button (click) = "deny()"> Deny </button>
+    </li>
+</ul>
+
+<button (click) = "sortByStatus()"> Sort By Status </button>
+<button (click) = "sortByAmount()"> Sort By Amount </button>
+<button (click) = "sortByName()"> Sort By Employee Name </button>
+<button (click) = "sortByDate()"> Sort By Request Date </button>
