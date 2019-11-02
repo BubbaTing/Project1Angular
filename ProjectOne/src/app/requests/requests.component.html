@@ -8,7 +8,7 @@
 </ul>
 
 <ul class="requests">
-    <li *ngfor= "for request of requests">
+    <li *ngfor= "for let request of requests">
         <span> {{ request.name }} </span>
         <span> {{ request.amount }} </span>
         <span> {{ request.description }} </span>
