@@ -3,12 +3,23 @@
         <table>
             <div>
                 <tr>
-                <td><input type="submit" value="view past tickets"></td>
+                <td><input
+                    (click)="tickets()"
+                    type="submit" value="view past tickets"></td>
                 </tr>
             </div>
             <div>   
                 <tr>
-                <td><input type="submit" value="add new reimbursement "></td>
+                <td><input 
+                    (click)="request()"
+                    type="submit" value="add new reimbursement "></td>
+                </tr>
+            </div>
+            <div>   
+                <tr>
+                <td><input *ngIf = "role"
+                    (click)="requests()"
+                    type="submit" value="view all reimbursement "></td>
                 </tr>
             </div>
         </table>

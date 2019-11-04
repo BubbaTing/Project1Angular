@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { TicketOptionComponent } from './ticket-option/ticket-option.component';
 import { TicketsComponent } from './tickets/tickets.component';
+import { RequestComponent } from './request/request.component';
+import { RequestsComponent } from './requests/requests.component';
 
 
 
@@ -19,6 +21,12 @@ const routes: Routes = [{
 }, {
   path: 'tickets',
   component: TicketsComponent
+}, {
+  path: 'request',
+  component: RequestComponent
+}, {
+  path: 'requests',
+  component: RequestsComponent
 }];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/login.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -14,18 +15,21 @@ export class LoginComponent implements OnInit {
 
   invalidInput = false;
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor( private loginService: LoginService) { }
 
-  ngOnInit() {  }
+  ngOnInit() {
+
+  }
 
   async submit(){
     const verify = {
       username: this.inputUsername,
       password: this.inputPassword
     };
-    console.log(verify);
-    this.loginService.loginHttp(verify);
-    await this.router.navigateByUrl('/ticket_option');  
+    // console.log(verify);
+    if(!this.loginService.loginHttp(verify)){
+      this.invalidInput = true;
+    }
   }
 
 }
