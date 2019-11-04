@@ -1,0 +1,27 @@
+<section>
+        <title>ticket option</title>
+        <table>
+            <div>
+                <tr>
+                <td><input
+                    (click)="tickets()"
+                    type="submit" value="view past tickets"></td>
+                </tr>
+            </div>
+            <div>   
+                <tr>
+                <td><input 
+                    (click)="request()"
+                    type="submit" value="add new reimbursement "></td>
+                </tr>
+            </div>
+            <div>   
+                <tr>
+                <td><input *ngIf = "role"
+                    (click)="requests()"
+                    type="submit" value="view all reimbursement "></td>
+                </tr>
+            </div>
+        </table>
+        
+</section>
