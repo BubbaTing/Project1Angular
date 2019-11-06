@@ -2,18 +2,34 @@
 
 <form action="/request">
     Amount:
-    <input type="text" name="firstname">
+    <input
+    [(ngModel)]="amount"
+    type="text" name="amount">
     <br>
     Type: <br>
-    <input type="radio" name="type" value="travel"> TRAVEL <br>
-    <input type="radio" name="type" value="food"> FOOD <br>
-    <input type="radio" name="type" value="lodge"> LODGE <br>
-    <input type="radio" name="type" value="other"> OTHER <br>
+    <input 
+    [(ngModel)]="type"
+    type="radio" name="type" value="1"> LODGING <br>
+    <input 
+    [(ngModel)]="type"
+    type="radio" name="type" value="2"> TRAVEL <br>
+    <input 
+    [(ngModel)]="type"
+    type="radio" name="type" value="3"> FOOD <br>
+    <input 
+    [(ngModel)]="type"
+    type="radio" name="type" value="4"> OTHER <br>
     Description: <br>
-    <input type="text" name="description" maxlength="25">
+    <input 
+    [(ngModel)]="description"
+    type="text" name="description" maxlength="25">
     <br>
     Upload Recipt: <br>
-    <input type="file" name="myRecipt"> <br>
-    <input type="submit"> <br>
+    <input
+    [(ngModel)]="picture" 
+    type="file" name="myRecipt"> <br>
+    <input
+    (click) = "submit()" 
+    type="submit"> <br>
 </form>
 

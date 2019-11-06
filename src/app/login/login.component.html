@@ -1,34 +1,54 @@
-<section>
-        <title>Login Page</title>
+<div class="container">
+    <h1> Welcome </h1>
 
-        <h1>welcome</h1>
-        <table>
-            <div>
-                <tr>
-                <td><label>Username</label></td>
-                <td><input 
-                    [(ngModel)] = "inputUsername"
-                    type="text" name="username"></td>
-                </tr>
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    
+                    <form class="form-signin">
+                        <div class="form-label-group">
+                    
+                            <input [(ngModel)] = "inputUsername" 
+                                    type="text" 
+                                    name="username" 
+                                    id="inputUsername" 
+                                    class="form-control text-center"
+                                    autocomplete="off"
+                                    placeholder="Username" 
+                                    required autofocus
+                            >
+
+                            <label for="inputUsername" class='text-center'>Username</label>                        
+                        </div>
+
+                        <div class="form-label-group">
+                            <input [(ngModel)] = "inputPassword"
+                                    type="password" 
+                                    name="password"
+                                    id="inputPassword" 
+                                    class="form-control text-center" 
+                                    placeholder="Password" 
+                                    required
+                            >
+                            <label for="inputPassword" class="text-center">Password</label>
+                        </div>
+
+                        <br>
+
+                        <div *ngIf="invalidInput">
+                            Incorrect Username/Password combination!
+                        </div>
+                    
+                        <input (click)="submit()" 
+                                type="submit" 
+                                value="Sign in" 
+                                class="btn btn-lg btn-primary btn-block text-uppercase" 
+                        >
+                    </form>
+                </div>
             </div>
-            <div>   
-                <tr>
-                <td><label>Password</label></td>
-                <td><input
-                    [(ngModel)] = "inputPassword"
-                     type="password" name="password"></td>
-                </tr>
-            </div>
-            <div>
-                <tr>
-                    <div *ngIf="invalidInput">
-                        Incorrect Username/Password combination!
-                    </div>
-                    <td><input
-                        (click)="submit()" 
-                        type="submit" value="Submit"></td>
-                </tr>
-            </div>
-        </table>
-        
-</section>
+        </div>
+    </div>
+</div>
