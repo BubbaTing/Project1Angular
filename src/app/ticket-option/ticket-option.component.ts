@@ -27,4 +27,7 @@ export class TicketOptionComponent implements OnInit {
     this.router.navigateByUrl('/requests');
   }
 
+  logout(){
+    this.router.navigateByUrl('/login');
+  }
 }
