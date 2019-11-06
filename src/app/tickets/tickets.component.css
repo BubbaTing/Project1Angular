@@ -1,0 +1,24 @@
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr, td{
+
+    border-style: solid;
+    border-color: blue;
+}
+
+td{
+    text-align: center;
+}
+
+div{
+    background-color: azure;
+}
+
+/* h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background: blue;
+} */
