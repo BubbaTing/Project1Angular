@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class RequestComponent implements OnInit {
 
   amount = 0;
-  type = '';
+  type = 0;
   description = '';
   picture = '';
 
@@ -19,17 +19,18 @@ export class RequestComponent implements OnInit {
   ngOnInit() {
   }
 
-  async sumbit(){
+  async submit(){
     const container = {
       amount: this.amount,
       type: this.type,
       description: this.description,
-      picture: this.picture
+      pic: this.picture
     }
     const url = 'http://localhost:8080/project1/insert';
     const a = await this.httpClient.post(url, container).toPromise();
     let b = JSON.parse(JSON.stringify(a));
     console.log(b);
+    this.router.navigateByUrl('/ticket_option');
   }
 
 }
