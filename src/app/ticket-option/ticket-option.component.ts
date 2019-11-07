@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-ticket-option',
@@ -10,24 +11,25 @@ export class TicketOptionComponent implements OnInit {
 
   role = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loggedIn: LoginService) { }
 
   ngOnInit() {
   }
 
-  tickets(){
+  tickets() {
     this.router.navigateByUrl('/tickets');
   }
 
-  request(){
+  request() {
     this.router.navigateByUrl('/request');
   }
 
-  requests(){
+  requests() {
     this.router.navigateByUrl('/requests');
   }
 
-  logout(){
+  logout() {
+    this.loggedIn.currentlyLoggedIn = false
     this.router.navigateByUrl('/login');
   }
 }
