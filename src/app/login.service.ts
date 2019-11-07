@@ -29,11 +29,12 @@ export class LoginService {
     const userObject = await this.httpClient.post(url, loginCredentials).toPromise();
     const userString = JSON.stringify(userObject);
     const userJSON   = JSON.parse(userString);
-
-    if (userJSON.roleID === 1 || userJSON.roleID === 2) {
+    
+    if (userJSON.id) {
       this.router.navigateByUrl('/ticket_option');
       this.currentlyLoggedIn = true;
     }
+    
     return this.currentlyLoggedIn;
   }
 }
