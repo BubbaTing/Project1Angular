@@ -95,3 +95,9 @@ body {
     font-size: 12px;
     color: #777;
 }
+
+.authentication-failure {
+    color: red;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
