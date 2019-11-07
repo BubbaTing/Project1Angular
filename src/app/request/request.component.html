@@ -1,26 +1,26 @@
-<h1>REQUEST FORM</h1>
+<h1>Request Form</h1>
 
 <form action="/request">
-    Amount:
+    Amount: $
     <input
     [(ngModel)]="amount"
-    type="text" name="amount">
+    type="number" step="0.01" name="amount">
     <br>
     Type: <br>
-    <input 
+    <input class="request-type"
     [(ngModel)]="type"
     type="radio" name="type" value="1"> LODGING <br>
-    <input 
+    <input class="request-type"
     [(ngModel)]="type"
     type="radio" name="type" value="2"> TRAVEL <br>
-    <input 
+    <input class="request-type"
     [(ngModel)]="type"
     type="radio" name="type" value="3"> FOOD <br>
-    <input 
+    <input class="request-type"
     [(ngModel)]="type"
     type="radio" name="type" value="4"> OTHER <br>
     Description: <br>
-    <input 
+    <input class="input"
     [(ngModel)]="description"
     type="text" name="description" maxlength="25">
     <br>
@@ -28,7 +28,7 @@
     <input
     [(ngModel)]="picture" 
     type="file" name="myRecipt"> <br>
-    <input
+    <input class='submit'
     (click) = "submit()" 
     type="submit"> <br>
 </form>
