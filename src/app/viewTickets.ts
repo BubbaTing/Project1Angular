@@ -1,4 +1,4 @@
-export interface tickets_details{
+export interface ticketsDetails{
     userId: number,
     submitted: number,
     resolved: string,

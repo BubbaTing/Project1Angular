@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tickets_details } from './viewTickets';
+import { ticketsDetails } from './viewTickets';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class UserDetailsService {
 
   constructor(private http: HttpClient ) { }
 
-  getDetails(): Observable<tickets_details[]>{
+  getDetails(): Observable<ticketsDetails[]>{
 
-    return this.http.get<tickets_details>(this.);
+    return this.http.get<ticketsDetails>(this);
   }
 }
