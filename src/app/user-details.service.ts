@@ -8,12 +8,14 @@ import { tickets_details } from './viewTickets';
 })
 export class UserDetailsService {
 
-  private url: String ='http://localhost:8081/project1/response';
+  private url: string ='http://localhost:8081/project1/response';
+
+  public tickets_details: any[]
 
   constructor(private http: HttpClient ) { }
 
   getDetails(): Observable<tickets_details[]>{
 
-    return null //this.http.get<tickets_details>(this.);
+    return this.http.get<tickets_details[]>(this.url);
   }
 }

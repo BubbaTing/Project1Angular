@@ -1,11 +1,14 @@
 export interface tickets_details{
-    userId: number,
-    submitted: number,
+    Id: number,
+    amount: number,
+    submitted: string,
     resolved: string,
     description: string,
     recipt: string,
-    author: string,
-    resolver: string,
-    status: string,
-    type: string
+    author: number,
+    resolver: number,
+    status: number,
+    type: number
   }
+
+  

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDetailsService } from '../user-details.service';
 
+
 @Component({
   selector: 'app-tickets',
   templateUrl: './tickets.component.html',
@@ -10,6 +11,8 @@ export class TicketsComponent implements OnInit {
 
   public ticket = [];
   constructor(private user: UserDetailsService ) { }
+
+  i: number = 0;
 
   ngOnInit() {
     this.user.getDetails().subscribe(data => this.ticket = data);
