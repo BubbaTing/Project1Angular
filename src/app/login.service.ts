@@ -23,12 +23,14 @@ export class LoginService {
     const loginCredentials = {
       username: credentials.username,
       password: credentials.password
+      
     };
-    const url = 'http://localhost:8080/project1/login';
+    const url = 'http://localhost:8081/project1/login';
     console.log(loginCredentials);
     const a = await this.httpClient.post(url, loginCredentials).toPromise();
     let b = JSON.parse(JSON.stringify(a));
     if(b.roleID === 1 || b.roleID === 2){
+
       this.router.navigateByUrl('/ticket_option');
       this.currentlyLoggedIn = true;
     } else {
