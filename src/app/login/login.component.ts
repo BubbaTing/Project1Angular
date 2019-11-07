@@ -26,7 +26,12 @@ export class LoginComponent implements OnInit {
       username: this.inputUsername,
       password: this.inputPassword
     };
-      this.invalidInput = this.loginService.loginHttp(verify);
+
+    const loginSuccessful = await this.loginService.loginHttp(verify);
+
+    if (!loginSuccessful) {
+      this.invalidInput = true;
+    }
 
   }
 

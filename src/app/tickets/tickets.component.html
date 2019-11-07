@@ -16,17 +16,17 @@
             <td>STATUS</td>
             <td>TYPE</td>
         </tr>
-        <tr>
-            <td>ID</td>
-            <td>AMOUNT</td>
-            <td>SUBMITTED</td>
-            <td>RESOLVED</td>
-            <td>DESCRIPTION</td>
-            <td>RECEIPT</td>
-            <td>AUTHOR</td>
-            <td>RESOLVER</td>
-            <td>STATUS</td>
-            <td>TYPE</td>
+        <tr *ngFor = "let t of ticket">
+            <td>{{t.Id}}</td>
+            <td>{{t.amount}}</td>
+            <td>{{t.submitted}}</td>
+            <td>{{t.resolved}}</td>
+            <td>{{t.description}}</td>
+            <td>{{t.recipt}}</td>
+            <td>{{t.author}}</td>
+            <td>{{t.resolver}}</td>
+            <td>{{t.status}}</td>
+            <td>{{t.type}}</td>
         </tr>
         </table>
 </div>
