@@ -30,9 +30,10 @@ export class LoginService {
     let b = JSON.parse(JSON.stringify(a));
     if(b.roleID === 1 || b.roleID === 2){
       this.router.navigateByUrl('/ticket_option');
-      return false;
+      this.currentlyLoggedIn = true;
     } else {
-      return true;
+      this.currentlyLoggedIn =  false;
     }
+    return this.currentlyLoggedIn;
   }
 }
