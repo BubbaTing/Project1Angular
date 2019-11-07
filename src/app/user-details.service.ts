@@ -14,6 +14,6 @@ export class UserDetailsService {
 
   getDetails(): Observable<tickets_details[]>{
 
-    return this.http.get<tickets_details>(this.);
+    return null //this.http.get<tickets_details>(this.);
   }
 }

@@ -25,7 +25,7 @@ export class LoginService {
       password: credentials.password
       
     };
-    const url = 'http://localhost:8081/project1/login';
+    const url = 'http://localhost:8080/project1/login';
     console.log(loginCredentials);
     const a = await this.httpClient.post(url, loginCredentials).toPromise();
     let b = JSON.parse(JSON.stringify(a));
