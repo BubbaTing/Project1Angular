@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TicketDetails } from './viewTickets';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,25 +17,19 @@ export class UserDetailsService {
 
   public TicketDetails: any[];
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient, private currentuser: LoginService ) { }
 
   getAllDetails(): Observable<TicketDetails[]> {
     return this.http.get<TicketDetails[]>(this.managerURL);
   }
 
   getDetails(): Observable<TicketDetails[]>{
-    const currentUser = {
-      author: 7
-    }
-
-    return this.http.post<TicketDetails[]>(this.url, currentUser);
+    
+    return this.http.post<TicketDetails[]>(this.url, this.currentuser.currentUser);
   }
 
   setApproval() {
-    const currentUser = {
-      aurthor: this.TicketDetails,
-      status: this.TicketDetails
-    }
-    return this.http.post(this.updateURL, currentUser);
+    
+    return this.http.post(this.updateURL, this.currentuser);
   }
 }

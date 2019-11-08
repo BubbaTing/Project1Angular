@@ -14,6 +14,9 @@ export class TicketOptionComponent implements OnInit {
   constructor(private router: Router, private loggedIn: LoginService) { }
 
   ngOnInit() {
+    if(this.loggedIn.currentUser.roleID == 2){
+      this.role = true;
+    }
   }
 
   tickets() {

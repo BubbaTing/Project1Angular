@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-request',
@@ -14,7 +15,7 @@ export class RequestComponent implements OnInit {
   description = '';
   picture = '';
 
-  constructor(private router: Router, private httpClient: HttpClient) { }
+  constructor(private router: Router, private httpClient: HttpClient, private loginService: LoginService) { }
 
   ngOnInit() {
   }
@@ -29,7 +30,7 @@ export class RequestComponent implements OnInit {
       type: this.type,
       description: this.description,
       pic: this.picture,
-      author: 0 | Math.random() * 5 + 1 //this.currentUser
+      author: this.loginService.currentUser.id
     }
     const url = 'http://localhost:8080/project1/insert';
     

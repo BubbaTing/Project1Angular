@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserDetailsService } from '../user-details.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-requests',
@@ -24,7 +25,7 @@ export class RequestsComponent implements OnInit {
   }
 
   deny() {
-
+    this.user.setApproval();
   }
 
 }
