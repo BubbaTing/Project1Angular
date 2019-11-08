@@ -1,4 +1,4 @@
-export interface tickets_details{
+export interface TicketDetails{
     Id: number,
     amount: number,
     submitted: string,

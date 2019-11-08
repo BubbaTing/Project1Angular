@@ -38,7 +38,9 @@
                         <br>
 
                         <div *ngIf="invalidInput">
-                            Incorrect Username/Password combination!
+                            <div class="authentication-failure"> 
+                                Incorrect Username/Password combination
+                            </div>
                         </div>
                     
                         <input (click)="submit()" 

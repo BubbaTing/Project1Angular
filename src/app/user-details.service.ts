@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tickets_details } from './viewTickets';
+import { TicketDetails } from './viewTickets';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class UserDetailsService {
 
   private url: string ='http://localhost:8080/project1/response';
 
-  public tickets_details: any[]
+  public TicketDetails: any[]
 
   constructor(private http: HttpClient ) { }
 
@@ -18,7 +18,7 @@ export class UserDetailsService {
     const currentUser = {
       author: 7
     }
-   
+
     return this.http.post<tickets_details[]>(this.url, currentUser);
   }
 }
