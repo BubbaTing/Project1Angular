@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDetailsService } from '../user-details.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,12 +11,16 @@ import { UserDetailsService } from '../user-details.service';
 export class TicketsComponent implements OnInit {
 
   public ticket = [];
-  constructor(private user: UserDetailsService ) { }
+  constructor(private router: Router, private user: UserDetailsService ) { }
 
   i: number = 0;
 
   ngOnInit() {
     this.user.getDetails().subscribe(data => this.ticket = data);
+  }
+
+  Back(){
+    this.router.navigateByUrl('/ticket_option');
   }
 
 }

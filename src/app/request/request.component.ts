@@ -19,6 +19,10 @@ export class RequestComponent implements OnInit {
   ngOnInit() {
   }
 
+  back(){
+    this.router.navigateByUrl('/ticket_option');
+  }
+
   async submit(){
     const container = {
       amount: this.amount,
