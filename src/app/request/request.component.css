@@ -1,17 +1,44 @@
-h1{
+h1 {
     text-align: center;
 }
 
-form{
+.label {
+    margin-right: 0.5em;
+}
+
+form {
     /* text-align: center; */
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     /* color:purple; */
-    background-color: orangered;
+    
+    border-radius: 1rem;
+    background: white;
+
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
     padding: 25px;
     margin: 20%;
 }
 
 .request-type, .input {
     margin-top: 1em;
+    margin: 1em;
+}
+
+.money {
+    text-align: center;
+}
+
+.margin-top-bottom {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+input {
+    margin-right: 0.75em;
+}
+
+.type-selection {
+    display: block;
+    margin: 0.2em;
 }
