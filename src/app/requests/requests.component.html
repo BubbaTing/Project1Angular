@@ -5,22 +5,24 @@
     <div id="requests-table">
         <ul class="request-headings">
             <span class='req-category'> Name </span>
+            <span class='req-category'> Type </span>
             <span class='req-category'> Amount </span>
             <span class='req-category'> Description </span>
-            <span class='req-category'> Timestamp </span>
+            <span class='req-category'> Date Requested </span>
         </ul>
 
-        <ul class="requests">
+        <ol class="requests">
             <li *ngFor="let request of requests">
-                <span> {{ request.name }} </span>
-                <span> {{ request.amount }} </span>
+                <span> {{ request.reimb_author }} </span>
+                <span> {{ request.type }} </span>
+                <span> ${{ request.amount }} </span>
                 <span> {{ request.description }} </span>
-                <span> {{ request.timestamp }} </span>
+                <span> {{ request.submit }} </span>
 
                 <button (click) = "approve()"> Approve </button>
                 <button (click) = "deny()"> Deny </button>
             </li>
-        </ul>
+        </ol>
     </div>
 
     <button (click) = "sortByStatus()"> Sort By Status </button>
