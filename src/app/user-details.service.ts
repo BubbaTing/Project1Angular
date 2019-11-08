@@ -9,10 +9,15 @@ import { TicketDetails } from './viewTickets';
 export class UserDetailsService {
 
   private url: string ='http://localhost:8080/project1/response';
-
+  
+  private managerURL: string = 'http://localhost:8080/project1/manager';
   public TicketDetails: any[];
 
   constructor(private http: HttpClient ) { }
+
+  getAllDetails(): Observable<TicketDetails[]> {
+    return this.http.get<TicketDetails[]>(this.managerURL);
+  }
 
   getDetails(): Observable<TicketDetails[]>{
     const currentUser = {
