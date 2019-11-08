@@ -19,5 +19,12 @@ export class RequestsComponent implements OnInit {
     this.user.getAllDetails().subscribe(data => this.requests = data);
   }
 
+  approve() {
+    this.user.setApproval();
+  }
+
+  deny() {
+
+  }
 
 }

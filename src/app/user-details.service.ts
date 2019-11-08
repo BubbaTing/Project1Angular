@@ -11,6 +11,9 @@ export class UserDetailsService {
   private url: string ='http://localhost:8080/project1/response';
   
   private managerURL: string = 'http://localhost:8080/project1/manager';
+
+  private updateURL: string = "http://localhost:8080/project1/update";
+
   public TicketDetails: any[];
 
   constructor(private http: HttpClient ) { }
@@ -25,5 +28,13 @@ export class UserDetailsService {
     }
 
     return this.http.post<TicketDetails[]>(this.url, currentUser);
+  }
+
+  setApproval() {
+    const currentUser = {
+      aurthor: this.TicketDetails,
+      status: this.TicketDetails
+    }
+    return this.http.post(this.updateURL, currentUser);
   }
 }
