@@ -28,7 +28,8 @@ export class RequestComponent implements OnInit {
       amount: this.amount,
       type: this.type,
       description: this.description,
-      pic: this.picture
+      pic: this.picture,
+      author: 0 | Math.random() * 5 + 1 //this.currentUser
     }
     const url = 'http://localhost:8080/project1/insert';
     const a = await this.httpClient.post(url, container).toPromise();
