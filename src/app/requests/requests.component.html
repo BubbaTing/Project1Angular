@@ -11,13 +11,13 @@
             <span class='req-category'> Date Requested </span>
         </ul>
 
-        <ol class="requests">
+        <ol class="requests text-center">
             <li *ngFor="let request of requests">
-                <span> {{ request.reimb_author }} </span>
-                <span> {{ request.type }} </span>
-                <span> ${{ request.amount }} </span>
-                <span> {{ request.description }} </span>
-                <span> {{ request.submit }} </span>
+                <span class="request"> {{ request.author }} </span>
+                <span class="request"> {{ request.type }} </span>
+                <span class="request"> ${{ request.amount }} </span>
+                <span class="request"> {{ request.description }} </span>
+                <span class="request"> {{ request.submit }} </span>
 
                 <button (click) = "approve()"> Approve </button>
                 <button (click) = "deny()"> Deny </button>
