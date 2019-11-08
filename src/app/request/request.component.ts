@@ -32,9 +32,10 @@ export class RequestComponent implements OnInit {
       author: 0 | Math.random() * 5 + 1 //this.currentUser
     }
     const url = 'http://localhost:8080/project1/insert';
-    const a = await this.httpClient.post(url, container).toPromise();
-    let b = JSON.parse(JSON.stringify(a));
-    console.log(b);
+    
+    //sent POST data from reimbursement to backend
+    await this.httpClient.post(url, container).toPromise();
+
     this.router.navigateByUrl('/ticket_option');
   }
 
