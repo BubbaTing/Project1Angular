@@ -12,13 +12,21 @@ export class LoginComponent implements OnInit {
 
   inputUsername = '';
   inputPassword = '';
+  roleID = 0;
 
   invalidInput = false;
-
-  constructor( private loginService: LoginService) { }
+  loginSuccessful = false;
+  
+  userSubscription: Subscription;
+  
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
-
+    this.userSubscription = this.loginService.userData
+    .subscribe(data => {
+      //onsole.log(JSON.stringify(data))
+      this.roleID = data.user_role_id;
+    });
   }
 
   async submit(){
