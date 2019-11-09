@@ -13,7 +13,7 @@ import { RequestComponent } from './request/request.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import{ HttpClientModule } from '@angular/common/http';
 
-import { StatusName } from './status-name.pipe';
+import { StatusOrTypeName } from './status-or-type-names.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { StatusName } from './status-name.pipe';
     RequestComponent,
     RequestsComponent,
     TicketsComponent,
-    StatusName,
+    StatusOrTypeName,
   ],
   imports: [
     BrowserModule,
