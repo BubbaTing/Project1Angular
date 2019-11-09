@@ -1,41 +1,41 @@
-<div class = "container text-center">
+<button class = "btn" (click) = "back()"> ← Return To Menu</button>
+
+<div class = "text-center">
 
     <h1 class="heading">View All Requests</h1>
 
-    <div id="requests-table">
-        <ul class="request-headings">
-            <span class='req-category'> Name </span>
-            <span class='req-category'> Type </span>
-            <span class='req-category'> Amount </span>
-            <span class='req-category'> Description </span>
-            <span class='req-category'> Date Requested </span>
-            <span class='req-category'> Status </span>
-        </ul>
+    <button (click) = "sortByStatus()" class="btn-sm"> Sort By Status </button>
+    <button (click) = "sortByAmount()" class="btn-sm"> Sort By Amount </button>
+    <button (click) = "sortByName()" class="btn-sm"> Sort By Employee Name </button>
+    <button (click) = "sortByDate()" class="btn-sm"> Sort By Request Date </button>
 
-        <ol class="requests text-center">
-            <li *ngFor="let request of requests">
-                <span class="request"> {{ request.author }} </span>
-                <span class="request"> {{ request.type }} </span>
-                <span class="request"> ${{ request.amount }} </span>
-                <span class="request"> {{ request.description }} </span>
-                <span class="request"> {{ request.submit }} </span>
-                <span class="request"> {{ request.status }} </span>
+    <table class="table request-table">
+        <thead>
+            <tr>
+                <th scope="col"> # </th>
+                <th scope="col"> Name </th>
+                <th scope="col"> Type </th>
+                <th scope="col"> Amount </th>
+                <th scope="col"> Description </th>
+                <th scope="col"> Date Requested </th>
+                <th scope="col"> Status </th>
+            </tr>
+        </thead>
 
-                <div *ngIf = "request.status == 3">
-                    <button type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
-                    <button type="button" (click) = "deny(request.reimb_id, 2)"> Deny </button>
-                </div>
+        <tbody class="requests text-center">
+            <tr *ngFor="let request of requests; let i = index">
+                <th> {{ i+1 }}. </th>
+                <th> {{ request.author }} </th>
+                <td> {{ request.type | statusOrTypeName : 'type' }} </td>
+                <td> ${{ request.amount }} </td>
+                <td> {{ request.description }} </td>
+                <td> {{ request.submit | date }} </td>
+                <td> {{ request.status | statusOrTypeName: 'status' }} </td>
 
-            </li>
-        </ol>
-    </div>
+                <button class="btn-sm" type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
+                <button class="btn-sm" type="button" (click) = "deny(request.reimb_id, 2)"> Deny </button>
+            </tr>
+        </tbody>
+    </table>
 
-    <button (click) = "sortByStatus()"> Sort By Status </button>
-    <button (click) = "sortByAmount()"> Sort By Amount </button>
-    <button (click) = "sortByName()"> Sort By Employee Name </button>
-    <button (click) = "sortByDate()"> Sort By Request Date </button>
-
-</div>
-<div>
-    <button (click) = "back()"> Return To Menu</button>
 </div>

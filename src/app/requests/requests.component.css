@@ -1,22 +1,16 @@
-.requests {
-    margin-top: 5%;
-    margin-bottom: 5%;
+.request-table {
+    margin: 2%;
+    box-shadow: 0 0.2rem 1.0rem 0 rgba(0, 0, 0, 0.3);
 }
 
 .heading {
-    margin-bottom: 20%;
+    margin-bottom: 5%;
 }
 
-.req-category, .request {
-    margin-right: 4%;
-    margin-left: 4%;
-}
-
-/* #requests-table {
-    
-} */
-
-.request-headings {
-    font-weight: 800;
-    margin-top: 20%;
+.btn-sm {
+    color: white;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    background-color: #007bff;
+    box-shadow: 0 0.2rem 1.0rem 0 rgba(0, 0, 0, 0.25);
 }
