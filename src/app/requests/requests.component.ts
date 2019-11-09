@@ -13,12 +13,11 @@ export class RequestsComponent implements OnInit {
   pending = true;
 
   constructor(
-    private rounter: Router, 
-    private user: UserDetailsService) { 
+    private router: Router, 
+    private user: UserDetailsService
+  ) {};
 
-  }
-
-  ngOnInit() {
+  ngOnInit() {    
     this.user.getAllDetails().subscribe(data => this.requests = data);
   }
 
@@ -27,7 +26,6 @@ export class RequestsComponent implements OnInit {
     this.user.setApproval(value, status);
     this.requests = [];
     this.user.getAllDetails().subscribe(data => this.requests = data);
-
   }
 
   deny(value: number, status: number) {
@@ -36,8 +34,14 @@ export class RequestsComponent implements OnInit {
     this.user.getAllDetails().subscribe(data => this.requests = data);
   }
 
-  back(){
-    this.rounter.navigateByUrl('ticket_option');
+  //this sorting works atm because all properties happen to be lexicographically sortable in JS by default.
+  //if that changes, the code will have to change.
+  sortByProperty(propertyDesc) {
+    this.requests.sort((a,b) => a[propertyDesc] - b[propertyDesc]);
+  }
+
+  back() {
+    this.router.navigateByUrl('ticket_option');
   }
 
 }

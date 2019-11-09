@@ -4,10 +4,10 @@
 
     <h1 class="heading">View All Requests</h1>
 
-    <button (click) = "sortByStatus()" class="btn-sm"> Sort By Status </button>
-    <button (click) = "sortByAmount()" class="btn-sm"> Sort By Amount </button>
-    <button (click) = "sortByName()" class="btn-sm"> Sort By Employee Name </button>
-    <button (click) = "sortByDate()" class="btn-sm"> Sort By Request Date </button>
+    <button (click) = "sortByProperty('status')" class="btn-sm"> Sort By Status </button>
+    <button (click) = "sortByProperty('amount')" class="btn-sm"> Sort By Amount </button>
+    <button (click) = "sortByProperty('author')"   class="btn-sm"> Sort By Employee Name </button>
+    <button (click) = "sortByProperty('date')"   class="btn-sm"> Sort By Request Date </button>
 
     <table class="table request-table">
         <thead>
@@ -24,18 +24,19 @@
 
         <tbody class="requests text-center">
             <tr *ngFor="let request of requests; let i = index">
-                <th> {{ i+1 }}. </th>
+                <th> {{ i + 1 }}. </th>
                 <th> {{ request.author }} </th>
-                <td> {{ request.type | statusOrTypeName : 'type' }} </td>
+                <td> {{ request.type | statusOrTypeName: 'type' }} </td>
                 <td> ${{ request.amount }} </td>
                 <td> {{ request.description }} </td>
                 <td> {{ request.submit | date }} </td>
                 <td> {{ request.status | statusOrTypeName: 'status' }} </td>
-                <div *ngIf = "request.status == 3">
+
+                <div *ngIf="request.status === 3">
                     <button class="btn-sm" type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
                     <button class="btn-sm" type="button" (click) = "deny(request.reimb_id, 2)"> Deny </button>
                 </div>
-                    
+              
             </tr>
         </tbody>
     </table>
