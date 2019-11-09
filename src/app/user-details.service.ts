@@ -8,8 +8,6 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class UserDetailsService {
-  currentTicket
-// attach ticket id to the button with attriubute binding
 
   private url: string ='http://localhost:8080/project1/response';
   
