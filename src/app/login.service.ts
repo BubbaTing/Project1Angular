@@ -39,8 +39,8 @@ export class LoginService {
       this.currentUser.id = userJSON.id;
       this.currentUser.username = userJSON.username;
       this.currentUser.password = userJSON.password;
-      this.currentUser.firstname = userJSON.firstname;
-      this.currentUser.lastname = userJSON.lastname;
+      this.currentUser.firstName = userJSON.firstname;
+      this.currentUser.lastName = userJSON.lastname;
       this.currentUser.email = userJSON.email;
       this.currentUser.roleID = userJSON.roleID;
       this.router.navigateByUrl('/ticket_option');

@@ -9,6 +9,7 @@
             <span class='req-category'> Amount </span>
             <span class='req-category'> Description </span>
             <span class='req-category'> Date Requested </span>
+            <span class='req-category'> Status </span>
         </ul>
 
         <ol class="requests text-center">
@@ -18,9 +19,13 @@
                 <span class="request"> ${{ request.amount }} </span>
                 <span class="request"> {{ request.description }} </span>
                 <span class="request"> {{ request.submit }} </span>
+                <span class="request"> {{ request.status }} </span>
 
-                <button (click) = "approve()"> Approve </button>
-                <button (click) = "deny()"> Deny </button>
+                <div *ngIf = "request.status == 3">
+                    <button type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
+                    <button type="button" (click) = "deny(request.reimb_id, 2)"> Deny </button>
+                </div>
+
             </li>
         </ol>
     </div>
@@ -30,4 +35,7 @@
     <button (click) = "sortByName()"> Sort By Employee Name </button>
     <button (click) = "sortByDate()"> Sort By Request Date </button>
 
+</div>
+<div>
+    <button (click) = "back()"> Return To Menu</button>
 </div>

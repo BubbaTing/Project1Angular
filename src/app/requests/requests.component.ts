@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { UserDetailsService } from '../user-details.service';
-import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-requests',
@@ -11,8 +10,11 @@ import { LoginService } from '../login.service';
 export class RequestsComponent implements OnInit {
 
   public requests = [];
+  pending = true;
 
-  constructor(private httpClient: HttpClient, private user: UserDetailsService) { 
+  constructor(
+    private rounter: Router, 
+    private user: UserDetailsService) { 
 
   }
 
@@ -20,12 +22,22 @@ export class RequestsComponent implements OnInit {
     this.user.getAllDetails().subscribe(data => this.requests = data);
   }
 
-  approve() {
-    this.user.setApproval();
+
+  approve(value: number, status: number) {
+    this.user.setApproval(value, status);
+    this.requests = [];
+    this.user.getAllDetails().subscribe(data => this.requests = data);
+
   }
 
-  deny() {
-    this.user.setApproval();
+  deny(value: number, status: number) {
+    this.user.setApproval(value, status);
+    this.requests = [];
+    this.user.getAllDetails().subscribe(data => this.requests = data);
+  }
+
+  back(){
+    this.rounter.navigateByUrl('ticket_option');
   }
 
 }

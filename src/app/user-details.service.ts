@@ -8,6 +8,8 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class UserDetailsService {
+  currentTicket
+// attach ticket id to the button with attriubute binding
 
   private url: string ='http://localhost:8080/project1/response';
   
@@ -28,8 +30,11 @@ export class UserDetailsService {
     return this.http.post<TicketDetails[]>(this.url, this.currentuser.currentUser);
   }
 
-  setApproval() {
-    
-    return this.http.post(this.updateURL, this.currentuser);
+  async setApproval(value: number, status: number) {
+    const container = {
+      reimb_id: value,
+      status: status
+    }
+    return await this.http.post(this.updateURL, container).toPromise();
   }
 }
