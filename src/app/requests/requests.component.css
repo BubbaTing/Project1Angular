@@ -1,22 +1,7 @@
-.requests {
-    margin-top: 5%;
-    margin-bottom: 5%;
+.request-table {
+    margin: 2%;
 }
 
 .heading {
-    margin-bottom: 20%;
-}
-
-.req-category, .request {
-    margin-right: 4%;
-    margin-left: 4%;
-}
-
-/* #requests-table {
-    
-} */
-
-.request-headings {
-    font-weight: 800;
-    margin-top: 20%;
+    margin-bottom: 5%;
 }
