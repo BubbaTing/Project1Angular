@@ -26,11 +26,11 @@ export class RequestComponent implements OnInit {
 
   async submit(){
     const container = {
-      amount: this.amount,
-      type: this.type,
       description: this.description,
-      pic: this.picture,
-      author: this.loginService.currentUser.id
+      author:      this.loginService.currentUser.id,
+      amount:      this.amount,
+      type:        this.type,
+      pic:         this.picture
     }
     const url = 'http://localhost:8080/project1/insert';
     
