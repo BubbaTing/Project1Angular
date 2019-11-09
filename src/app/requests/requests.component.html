@@ -31,10 +31,10 @@
                 <td> {{ request.description }} </td>
                 <td> {{ request.submit | date }} </td>
                 <td> {{ request.status | statusOrTypeName: 'status' }} </td>
-                </div *ngIf = "request.status = 3">
+                <div *ngIf = "request.status == 3">
                     <button class="btn-sm" type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
                     <button class="btn-sm" type="button" (click) = "deny(request.reimb_id, 2)"> Deny </button>
-                <div>
+                </div>
                     
             </tr>
         </tbody>
