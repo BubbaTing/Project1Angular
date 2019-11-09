@@ -13,6 +13,8 @@ import { RequestComponent } from './request/request.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import{ HttpClientModule } from '@angular/common/http';
 
+import { StatusName } from './status-name.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import{ HttpClientModule } from '@angular/common/http';
     ManagerPageComponent,
     RequestComponent,
     RequestsComponent,
-    TicketsComponent
+    TicketsComponent,
+    StatusName,
   ],
   imports: [
     BrowserModule,

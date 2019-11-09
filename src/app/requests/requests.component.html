@@ -19,7 +19,7 @@
                 <span class="request"> ${{ request.amount }} </span>
                 <span class="request"> {{ request.description }} </span>
                 <span class="request"> {{ request.submit }} </span>
-                <span class="request"> {{ request.status }} </span>
+                <span class="request"> {{ request.status | statusName }} </span>
 
                 <div *ngIf = "request.status == 3">
                     <button type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
