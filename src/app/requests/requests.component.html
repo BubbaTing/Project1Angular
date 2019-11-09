@@ -1,13 +1,13 @@
-<button class = "btn" (click) = "back()"> Return To Menu</button>
+<button class = "btn" (click) = "back()"> ← Return To Menu</button>
 
 <div class = "text-center">
 
     <h1 class="heading">View All Requests</h1>
 
-    <button (click) = "sortByStatus()"> Sort By Status </button>
-    <button (click) = "sortByAmount()"> Sort By Amount </button>
-    <button (click) = "sortByName()"> Sort By Employee Name </button>
-    <button (click) = "sortByDate()"> Sort By Request Date </button>
+    <button (click) = "sortByStatus()" class="btn-sm"> Sort By Status </button>
+    <button (click) = "sortByAmount()" class="btn-sm"> Sort By Amount </button>
+    <button (click) = "sortByName()" class="btn-sm"> Sort By Employee Name </button>
+    <button (click) = "sortByDate()" class="btn-sm"> Sort By Request Date </button>
 
     <table class="table request-table">
         <thead>
