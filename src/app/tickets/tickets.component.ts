@@ -19,7 +19,7 @@ export class TicketsComponent implements OnInit {
     this.user.getDetails().subscribe(data => this.ticket = data);
   }
 
-  Back(){
+  back(){
     this.router.navigateByUrl('/ticket_option');
   }
 
