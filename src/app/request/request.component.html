@@ -1,4 +1,6 @@
-<h1>Request Form</h1>
+<button class = "btn" (click) = "back()"> ← Return To Menu </button>
+
+<h1 class="heading">Request Form</h1>
 
 <form action="/request" class="form-signin text-center">
     <div class='label'> 
@@ -24,7 +26,7 @@
                value="1"
         >
 
-        <label for="type"> LODGING </label>
+        <label for="type"> Lodging </label>
     </div>
     
     <div class="type-selection request-type">
@@ -34,7 +36,7 @@
                value="2"
         > 
 
-        <label for="type"> TRAVEL </label>
+        <label for="type"> Travel </label>
     </div>
 
 
@@ -45,7 +47,7 @@
                value="3"
         >
         
-        <label for="type"> FOOD </label>
+        <label for="type"> Food </label>
     </div>
 
     <div class="type-selection request-type">
@@ -55,20 +57,23 @@
                value="4"
         >
 
-        <label for="type"> OTHER </label>
+        <label for="type"> Other </label>
     </div>
 
     <div class="label"> 
         Description: 
     </div>
     
-    <textarea [(ngModel)]="description" name="description"> </textarea>
+    <div>
+        <textarea [(ngModel)]="description" name="description"> </textarea>
+    </div>
+    
     
     <div class="label"> 
         Upload Receipt: 
     </div>
 
-    <div class="margin-top-bottom btn btn-primary">
+    <div class="margin-bottom btn btn-primary">
         <input [(ngModel)]="picture" 
                type="file" 
                name="myRecipt"
@@ -77,19 +82,9 @@
 
     <div>
         <input (click) = "submit()" 
-               class='btn btn-lg btn-primary text-uppercase'
+               class='btn btn-sm btn-primary text-uppercase'
                type="submit"
         >
     </div>
 
-    <div>
-        <input (click) = "back()" 
-               class='btn btn-lg btn-primary text-uppercase'
-               type="submit"
-               value="back"
-        >
-    </div>
-
-    
 </form>
-

@@ -3,6 +3,7 @@ h1 {
 }
 
 .label {
+    margin-top: 0.5em;
     margin-right: 0.5em;
 }
 
@@ -17,7 +18,7 @@ form {
 
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
     padding: 25px;
-    margin: 20%;
+    margin: 10%;
 }
 
 .request-type, .input {
@@ -29,8 +30,8 @@ form {
     text-align: center;
 }
 
-.margin-top-bottom {
-    margin-top: 2em;
+.margin-bottom {
+    margin-top: 1em;
     margin-bottom: 2em;
 }
 
