@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 })
 export class TicketsComponent implements OnInit {
 
-  public ticket = [];
+  public tickets = [];
   constructor(private router: Router, private user: UserDetailsService ) { }
 
   i: number = 0;
 
   ngOnInit() {
-    this.user.getDetails().subscribe(data => this.ticket = data);
+    this.user.getDetails().subscribe(data => this.tickets = data);
   }
 
   back(){
