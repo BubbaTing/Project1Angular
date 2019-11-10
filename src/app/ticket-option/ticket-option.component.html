@@ -1,33 +1,38 @@
-<section>
-        <title>ticket option</title>
-        <table>
-            <div>
-                <tr>
-                <td><input
-                    (click)="tickets()"
-                    type="submit" value="view past tickets"></td>
-                </tr>
-            </div>
-            <div>   
-                <tr>
-                <td><input 
-                    (click)="request()"
-                    type="submit" value="add new reimbursement"></td>
-                </tr>
-            </div>
-            <div>   
-                <tr>
-                <td><input *ngIf = "role"
-                    (click)="requests()"
-                    type="submit" value="view all reimbursements"></td>
-                </tr>
-            </div>
-            <div>   
-                <tr>
-                <td><input
-                    (click)="logout()"
-                    type="submit" value="LogOut"></td>
-                </tr>
-            </div>
-        </table>
-</section>
+<div class='navigation'>
+
+    <h1> Where do you want to go? </h1>
+
+    <div>
+        <input class="btn btn-primary" 
+               (click)="tickets()"
+               type="submit" 
+               value="View past tickets"
+        >
+    </div>
+
+    <div>
+        <input class="btn btn-primary"
+               (click)="request()"
+               type="submit" 
+               value="Add new reimbursement"
+        >
+    </div>
+
+    <div>
+        <input *ngIf = "admin"
+               class="btn btn-primary"
+               (click) = "requests()"
+               type="submit" 
+               value="View all reimbursements"
+        >
+    </div>
+
+    <div>
+        <input (click)="logout()"
+                class="btn btn-primary"
+                type="submit" 
+                value="Log Out"
+        >
+    </div>
+
+</div>
