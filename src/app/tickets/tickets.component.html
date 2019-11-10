@@ -1,35 +1,38 @@
-<h1>PAST TICKETS</h1>
+<button class = "btn" (click) = "back()"> ← Return To Menu </button>
 
-<div>
-    <table>
-        <col />
-        <col span="2" />
-        <tr>
-            <td>ID</td>
-            <td>AMOUNT</td>
-            <td>SUBMITTED</td>
-            <td>RESOLVED</td>
-            <td>DESCRIPTION</td>
-            <td>RECEIPT</td>
-            <td>AUTHOR</td>
-            <td>RESOLVER</td>
-            <td>STATUS</td>
-            <td>TYPE</td>
-        </tr>
-        <tr *ngFor = "let t of ticket">
-            <td>{{t.reimb_id}}</td>
-            <td>{{t.amount}}</td>
-            <td>{{t.submit}}</td>
-            <td>{{t.resolve}}</td>
-            <td>{{t.description}}</td>
-            <td>{{t.pic}}</td>
-            <td>{{t.author}}</td>
-            <td>{{t.resolver}}</td>
-            <td>{{t.status}}</td>
-            <td>{{t.type}}</td>
-        </tr>
-        </table>
-</div>
-<div>
-    <button (click)="Back()">Back</button>
+<div class="container text-center">
+
+    <h1 class="heading">Your Tickets</h1>
+
+    <table class="table request-table">
+        <thead>
+            <tr>
+                <th> # </th>
+                <th> Amount </th>
+                <th> Submitted </th>
+                <th> Resolved </th>
+                <th> Description </th>
+                <th> Receipt </th>
+                <th> Author </th>
+                <th> Resolver </th>
+                <th> Status </th>
+                <th> Type </th>
+            </tr>
+        </thead>
+
+        <tbody class="text-center">
+            <tr *ngFor = "let ticket of tickets; let idx = index">
+                <td> {{ idx + 1 }} </td>
+                <td> ${{ ticket.amount }} </td>
+                <td> {{ ticket.submit | date }} </td>
+                <td> {{ ticket.resolve | date }} </td>
+                <td> {{ ticket.description }} </td>
+                <td> {{ ticket.pic }} </td>
+                <td> {{ ticket.author }} </td>
+                <td> {{ ticket.resolver }} </td>
+                <td> {{ ticket.status | statusOrTypeName : 'status' }} </td>
+                <td> {{ ticket.type | statusOrTypeName : 'type' }} </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

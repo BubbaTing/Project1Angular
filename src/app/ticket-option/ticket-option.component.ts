@@ -8,14 +8,13 @@ import { LoginService } from '../login.service';
   styleUrls: ['./ticket-option.component.css']
 })
 export class TicketOptionComponent implements OnInit {
-
-  role = false;
+  admin = false;
 
   constructor(private router: Router, private loggedIn: LoginService) { }
 
   ngOnInit() {
-    if(this.loggedIn.currentUser.roleID == 2){
-      this.role = true;
+    if (this.loggedIn.currentUser.roleID === 2){
+      this.admin = true;
     }
   }
 

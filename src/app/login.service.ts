@@ -35,14 +35,9 @@ export class LoginService {
     const userString = JSON.stringify(userObject);
     const userJSON   = JSON.parse(userString);
     
-    if (userJSON.id != null) {
-      this.currentUser.id = userJSON.id;
-      this.currentUser.username = userJSON.username;
-      this.currentUser.password = userJSON.password;
-      this.currentUser.firstName = userJSON.firstname;
-      this.currentUser.lastName = userJSON.lastname;
-      this.currentUser.email = userJSON.email;
-      this.currentUser.roleID = userJSON.roleID;
+    if (userJSON.id) {
+      this.currentUser = userJSON;
+      
       this.router.navigateByUrl('/ticket_option');
       this.currentlyLoggedIn = true;
     }
