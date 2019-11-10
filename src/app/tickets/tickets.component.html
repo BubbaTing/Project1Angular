@@ -30,8 +30,8 @@
                 <td> {{ ticket.pic }} </td>
                 <td> {{ ticket.author }} </td>
                 <td> {{ ticket.resolver }} </td>
-                <td> {{ ticket.status | statusOrTypeName }} </td>
-                <td> {{ ticket.type | statusOrTypeName }} </td>
+                <td> {{ ticket.status | statusOrTypeName : 'status' }} </td>
+                <td> {{ ticket.type | statusOrTypeName : 'type' }} </td>
             </tr>
         </tbody>
     </table>
