@@ -21,14 +21,7 @@ export class RequestsComponent implements OnInit {
     this.user.getAllDetails().subscribe(data => this.requests = data);
   }
 
-
-  approve(value: number, status: number) {
-    this.user.setApproval(value, status);
-    this.requests = [];
-    this.user.getAllDetails().subscribe(data => this.requests = data);
-  }
-
-  deny(value: number, status: number) {
+  approveOrDeny(value: number, status: number) {
     this.user.setApproval(value, status);
     this.requests = [];
     this.user.getAllDetails().subscribe(data => this.requests = data);
@@ -36,7 +29,7 @@ export class RequestsComponent implements OnInit {
 
   //this sorting works atm because all properties happen to be lexicographically sortable in JS by default.
   //if that changes, the code will have to change.
-  sortByProperty(propertyDesc) {
+  sortByProperty(propertyDesc: string) {
     this.requests.sort((a,b) => a[propertyDesc] - b[propertyDesc]);
   }
 

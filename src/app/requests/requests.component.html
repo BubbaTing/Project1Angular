@@ -7,7 +7,7 @@
     <button (click) = "sortByProperty('status')" class="btn-sm"> Sort By Status </button>
     <button (click) = "sortByProperty('amount')" class="btn-sm"> Sort By Amount </button>
     <button (click) = "sortByProperty('author')" class="btn-sm"> Sort By Employee Name </button>
-    <button (click) = "sortByProperty('date')"   class="btn-sm"> Sort By Request Date </button>
+    <button (click) = "sortByProperty('submit')" class="btn-sm"> Sort By Request Date </button>
 
     <table class="table request-table">
         <thead>
@@ -33,8 +33,8 @@
                 <td> {{ request.status | statusOrTypeName: 'status' }} </td>
 
                 <div *ngIf="request.status === 3">
-                    <button class="btn-sm" type="button" (click) = "approve(request.reimb_id, 1)"> Approve </button>
-                    <button class="btn-sm" type="button" (click) = "deny(request.reimb_id, 2)"> Deny </button>
+                    <button class="btn-sm" type="button" (click) = "approveOrDeny(request.reimb_id, 1)"> Approve </button>
+                    <button class="btn-sm" type="button" (click) = "approveOrDeny(request.reimb_id, 2)"> Deny </button>
                 </div>
               
             </tr>
