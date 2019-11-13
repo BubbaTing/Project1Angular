@@ -31,6 +31,7 @@ export class UserDetailsService {
   async setApproval(value: number, status: number) {
     const container = {
       reimb_id: value,
+      resolver: this.currentuser.currentUser.id, 
       status: status
     }
     return await this.http.post(this.updateURL, container).toPromise();

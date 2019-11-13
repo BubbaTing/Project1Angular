@@ -19,6 +19,12 @@ export class LoginService {
     email: 'string',
     roleID: 0
   };
+  allUser = {
+    id: 0,
+    firstName: 'string'
+  }
+
+
 
 
   constructor(private router: Router, private httpClient: HttpClient) { }
@@ -34,13 +40,19 @@ export class LoginService {
     const userObject = await this.httpClient.post(url, loginCredentials).toPromise();
     const userString = JSON.stringify(userObject);
     const userJSON   = JSON.parse(userString);
+    const userObject2 = await this.httpClient.get(url).toPromise();
+    const userString2 = JSON.stringify(userObject2);
+    const userJSON2 = JSON.parse(userString2);
     
     if (userJSON.id) {
       this.currentUser = userJSON;
       
+      this.allUser = userJSON2;
+
       this.router.navigateByUrl('/ticket_option');
       this.currentlyLoggedIn = true;
     }
+
     return this.currentlyLoggedIn;
   }
 }

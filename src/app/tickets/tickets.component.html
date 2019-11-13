@@ -28,8 +28,8 @@
                 <td> {{ ticket.resolve | date }} </td>
                 <td> {{ ticket.description }} </td>
                 <td> {{ ticket.pic }} </td>
-                <td> {{ ticket.author }} </td>
-                <td> {{ ticket.resolver }} </td>
+                <td> {{ ticket.author | FirstName }} </td>
+                <td> {{ ticket.resolver | FirstName }} </td>
                 <td> {{ ticket.status | statusOrTypeName : 'status' }} </td>
                 <td> {{ ticket.type | statusOrTypeName : 'type' }} </td>
             </tr>

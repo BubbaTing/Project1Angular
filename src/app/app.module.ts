@@ -14,6 +14,7 @@ import { TicketsComponent } from './tickets/tickets.component';
 import{ HttpClientModule } from '@angular/common/http';
 
 import { StatusOrTypeName } from './status-or-type-names.pipe';
+import { FirstName } from './user-names.pipe'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { StatusOrTypeName } from './status-or-type-names.pipe';
     RequestsComponent,
     TicketsComponent,
     StatusOrTypeName,
+    FirstName
   ],
   imports: [
     BrowserModule,

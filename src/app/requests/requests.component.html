@@ -25,7 +25,7 @@
         <tbody class="requests text-center">
             <tr *ngFor="let request of requests; let i = index">
                 <th> {{ i + 1 }}. </th>
-                <th> {{ request.author }} </th>
+                <th> {{ request.author | FirstName}} </th>
                 <td> {{ request.type | statusOrTypeName: 'type' }} </td>
                 <td> ${{ request.amount }} </td>
                 <td> {{ request.description }} </td>
